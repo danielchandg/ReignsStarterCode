@@ -46,7 +46,7 @@ function makeActive() {
 function resolveChoice(){
   if (choice !== null) {
     choice();
-    cardsDone += 1;
+    if(!activeCardObject.no) cardsDone += 1;
     
     updateMeters();
     

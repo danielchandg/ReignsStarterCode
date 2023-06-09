@@ -23,38 +23,23 @@
 // }
 
 firstCard = {
-  prompt: 'Sweetie, are you excited for your first day of first grade?',
-  rightChoiceText: 'I love school!',
-  rightChoice: function(){
-    ad('e', 25);
-    addPackToDeck('Lunchtime');
-    addPackToDeck('Circle Time');
-    addPackToDeck('Learning');
-    addPackToDeck('Playtime');
-    addPackToDeck('Halloween');
-    addPackToDeck('Home');
-  },
-  leftChoiceText: 'I hate school',
-  leftChoice: function(){
-    ad('e', -25);
-    addPackToDeck('Lunchtime');
-    addPackToDeck('Circle Time');
-    addPackToDeck('Learning');
-    addPackToDeck('Playtime');
-    addPackToDeck('Halloween');
-    addPackToDeck('Home');
-  },
-  name: 'Mom',
+  prompt: '',
+  rightChoiceText: 'Start',
+  rightChoice: () => addToTopDeck('secondCard'),
+  leftChoiceText: 'Start',
+  leftChoice: () => addToTopDeck('secondCard'),
+  name: '',
   resultText: '',
-  image: './images/mom.jpg',
   priority: 1,
   pack: 'none',
   left_p: false,
-  left_e: true,
+  left_e: false,
   left_m: false,
   right_p: false,
-  right_e: true,
-  right_m: false
+  right_e: false,
+  right_m: false,
+  image: './images/title.jpg',
+  no: true
 }
 
 emptyCard = {
@@ -76,44 +61,42 @@ emptyCard = {
 
 
 cardPool = {
-  "uniqueIDList" : ["VanGoghHappy", "VanGoghBetrayed"],
+  "uniqueIDList" : ["secondCard"],
   
-  "VanGoghHappy" : {
-    prompt: "Really? Let's be friends",
-    rightChoiceText: "Lol Okay",
-      rightChoice: function(){
-      addResource("veggies", 10)
-      },
-    leftChoiceText: "XD HAHA. . .No", 
-    leftChoice: function(){
-      addResource("meat", 20)
-      addToTopDeck("VanGoghBetrayed")
-    enemiesMade += 1;
+  "secondCard" : {
+    prompt: 'Sweetie, are you excited for your first day of first grade?',
+    rightChoiceText: 'I love school!',
+    rightChoice: function(){
+      ad('e', 25);
+      addPackToDeck('Lunchtime');
+      addPackToDeck('Circle Time');
+      addPackToDeck('Learning');
+      addPackToDeck('Playtime');
+      addPackToDeck('Halloween');
+      addPackToDeck('Home');
     },
-    name: "Van Gogh",
-    resultText: "",
-    image: "./images/VanGosh.png",
-    priority: 2,
-    pack : "none"
+    leftChoiceText: 'I hate school',
+    leftChoice: function(){
+      ad('e', -25);
+      addPackToDeck('Lunchtime');
+      addPackToDeck('Circle Time');
+      addPackToDeck('Learning');
+      addPackToDeck('Playtime');
+      addPackToDeck('Halloween');
+      addPackToDeck('Home');
+    },
+    name: 'Mom',
+    resultText: '',
+    image: './images/mom.jpg',
+    priority: 1,
+    pack: 'none',
+    left_p: false,
+    left_e: true,
+    left_m: false,
+    right_p: false,
+    right_e: true,
+    right_m: false
   },
-
-
-  "VanGoghBetrayed": {
-    prompt: "To Heck with you",
-    rightChoiceText: ". . . ",
-      rightChoice: function(){
-      addResource("veggies", 20)
-      },
-    leftChoiceText: "Fine. . . ", 
-    leftChoice: function(){
-      addResource("meat", 100)
-    },
-    name: "Van Gogh",
-    resultText: "",
-    image: "./images/VanGosh.png",
-    priority: 2,
-    pack : "none"
-  }
 
 }
 
