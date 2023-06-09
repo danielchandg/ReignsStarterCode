@@ -1,5 +1,7 @@
 body {
   background-color: #beef;
+  font-family: monospace;
+  font-size: 140%;
   
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -20,16 +22,22 @@ div {
   margin: auto;
 }
 
+#statIndicators {
+  width: 100%;
+  height: 20px;
+  background-color: black;
+}
+
 #statIcons {
   width: 100%;
-  height: 75px;
-  
+  height: 100px;
+  background-color: black;
 }
 #dialogBox{
   padding: 10px;
   width: parent;
-  height: 75px;
-  
+  height: 95px;
+  text-align: center;
   
 }
 #cardStack{
@@ -38,18 +46,19 @@ div {
   
 }
 #cardName{
-  padding: 10px;
+  padding-top: 15px;
   width: parent;
   width:100%;
   height:50px;
-  
+  text-align: center;
+  font-size: 110%;
 }
 #playerData{
-  padding: 10px;
+  padding-top: 10px;
   width: parent;
   width:100%;
   height:50px;
-  
+  font-size: 80%;
 }
 
 
@@ -109,8 +118,9 @@ object-fit: cover;
   top: 20px;
   left: 20px;;
   width: 50px;
-  
-  
+  padding-left: 3px;
+  padding-right: 12px;
+  font-size: 75%;
   transition: opacity 0.5s linear;
 
 }
@@ -120,8 +130,9 @@ object-fit: cover;
   top: 20px;
   right: 20px;
   width: 50px;
-
-
+  padding-left: 3px;
+  padding-right: 12px;
+  font-size: 75%;
   transition: color 0.5s linear;
 }
 
@@ -157,13 +168,27 @@ object-fit: cover;
   
   position: absolute;
   top:0;
-  background-color: black;
+  background-color: rgb(97, 90, 66)
 }
 
 .statIconImageContainer{
   position: relative;
   display: inline-block;
   height: 75px;
-  width: 75px
-  
+  width: 72px;
+  margin-left: 43.75px;
+  margin-top: 12px;
+}
+
+.indicator {
+  width: 47px;
+  margin-left: 58px;
+  display: inline-block;
+  font-size: small;
+  text-align: center;
+  margin-top: 8px;
+  background-color: black;
+  color: #feebae;
+  opacity: 0;
+  transition: opacity 0.3s;
 }

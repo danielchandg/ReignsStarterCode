@@ -13,6 +13,7 @@ let anxiety = 40 // how anxious the speaker is
 
 
 function insertCardInfo(card) {
+  console.log('card:', card);
   document.getElementById("textRight").innerHTML = card.rightChoiceText;
   document.getElementById("textLeft").innerHTML =  card.leftChoiceText;
   document.getElementById("resultText").innerHTML = card.resultText;
@@ -44,7 +45,8 @@ function makeActive() {
 
 function resolveChoice(){
   if (choice !== null) {
-    choice()
+    choice();
+    cardsDone += 1;
     
     updateMeters();
     
@@ -75,16 +77,27 @@ function resolveChoice(){
 
 
 function showRightText(){
-  document.getElementById("textRight").style.opacity = "100"; 
-  document.getElementById("textLeft").style.opacity = "0"; 
+  document.getElementById("textRight").style.opacity = "100";
+  document.getElementById("textLeft").style.opacity = "0";
+  setDots(activeCardObject.right_p, activeCardObject.right_e, activeCardObject.right_m);
 }
 function showLeftText(){
-  document.getElementById("textRight").style.opacity = "0"; 
-  document.getElementById("textLeft").style.opacity = "100"; 
+  document.getElementById("textRight").style.opacity = "0";
+  document.getElementById("textLeft").style.opacity = "100";
+  setDots(activeCardObject.left_p, activeCardObject.left_e, activeCardObject.left_m);
+
 }
 function showNoText(){
   document.getElementById("textRight").style.opacity = "0"; 
-  document.getElementById("textLeft").style.opacity = "0"; 
+  document.getElementById("textLeft").style.opacity = "0";
+  setDots(false, false, false);
+}
+
+function setDots(p, e, m){
+  let dots = document.getElementsByClassName('indicator');
+  dots[0].style.opacity = p ? "100" : "0";
+  dots[1].style.opacity = e ? "100" : "0";
+  dots[2].style.opacity = m ? "100" : "0";
 }
 
 $( document ).ready( function(){

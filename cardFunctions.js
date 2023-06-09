@@ -69,14 +69,22 @@ function shuffleDeck(array){
         if (labels[i] == "image"){
         card[labels[i]] = "./images/" + values[i];
         }
-        if (labels[i] == "rightChoice" || labels[i] == "leftChoice"){
-          console.log(values[i])
+        if (labels[i] == "rightChoice"){
+          card['right_p'] = values[i].includes("'p'");
+          card['right_e'] = values[i].includes("'e'");
+          card['right_m'] = values[i].includes("'m'");
           let localFunction = new Function(values[i])
           card[labels[i]] = localFunction;
         }
-      } 
-        console.log(card)
-      
+        if (labels[i] == "leftChoice"){
+          card['left_p'] = values[i].includes("'p'");
+          card['left_e'] = values[i].includes("'e'");
+          card['left_m'] = values[i].includes("'m'");
+          let localFunction = new Function(values[i])
+          card[labels[i]] = localFunction;
+        }
+      }
+      console.log(card)
       console.log(values)
       
       cardPool.uniqueIDList.push(values[0])

@@ -1,10 +1,10 @@
-enemiesMade = 0;
+cardsDone = 0;
 
 
 function updatePlayerData(){
   
   
-let dataToShow = "ENEMIES MADE: "+ enemiesMade;
+let dataToShow = "&nbsp;Cards: "+ cardsDone;
 
 
 io.writeIntoElement(dataToShow,"playerData")

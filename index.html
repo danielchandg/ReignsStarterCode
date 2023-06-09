@@ -29,6 +29,11 @@
 
 <div id="gameContainer">
   
+  <div id="statIndicators">
+    <div class="indicator" id="pIndicator">⬤</div>
+    <div class="indicator" id="eIndicator">⬤</div>
+    <div class="indicator" id="mIndicator">⬤</div>
+  </div>
   <div id="statIcons"> </div>
 
 
@@ -60,11 +65,51 @@
 <!-- here is the URL for the google sheet for this project:  https://docs.google.com/spreadsheets/d/1y6r9WXb2a9FA0KxBa__Y3LriUq8_KHakMViJ2irY5D4/edit?usp=sharing -->
 <pre id="data" style="visibility:collapse; display: none">
 ID (unique)	prompt	rightChoiceText	rightChoice	leftChoiceText	leftChoice	name	resultText	image	priority	pack
-q	Do you have Nuts?	What?	addResource("meat", 20);addResource("veggies", -20)	What?	addResource("meat", -20);addResource("veggies", 20)	Dog		Squirrel.jpg	1	bumbling
-w	Hey a Person	What?	addResource("meat", 20);addResource("veggies", -20)	What?	addResource("meat", -20);addResource("veggies", 20)	Dog		Squirrel.png	2	bumbling
-e	Squeak	What?	addResource("meat", 20);addResource("veggies", -20)	What?	addResource("meat", -20);addResource("veggies", 20)	Dog		Squirrel.png	2	bumbling
-r	(Panicking)	What?	addResource("meat", 20);addResource("veggies", -20)	What?	addResource("meat", -20);addResource("veggies", 20)	Dog	Something Alarms Your	Squirrel.png	1	bumbling
-tr	woops	What?	addResource("meat", 20);addResource("veggies", -20)	What?	addResource("meat", -20);addResource("veggies", 20)	Dog		Squirrel.png	2	bumbling
+lunch4	It's lunchtime!	Yay!	addToTopDeck('lunch1')	Yay!	addToTopDeck('lunch1')	Max		max2.jpg	1	Lunchtime
+lunch1	Hey, look! Max has a note from Mommy in his lunch! Are you still a baby who needs Mommy's help?	It's nothing	ad('p', 20); ad('m', -25);	Yes, I do	ad('m', 30);	Soren		soren.jpg	1	
+lunch2	Max, can I trade you a cool rock from my collection for your cookie please?	My mom baked it for me, sorry Brixlee	ad('p', -25);	I would love to trade you for your rock, Brixlee	ad('p', 25); addPackToDeck('Circle Time 2')	Brixlee		brixlee.jpg	1	Lunchtime
+lunch3	What did Mom pack you for lunch today? I really hope it's...	PB&J!	ad('m', -25)	Lasagna!	ad('m', 20)	Max		max.jpg	1	Lunchtime
+circle1	Class, it's time for Circle Time!	Yay!	addToTopDeck('circle2')	Yay!	addToTopDeck('circle2')	Ms. Autumn		ms_autumn.jpg	1	Circle Time
+circle2	Class, who would like to read Charlotte's Web out loud?	Me, Ms. Autumn!	ad('e', 25); addPackToDeck('Circle Time 3'); addToTopDeck('circle3')	. . .	ad('p', -15); ad('e', -15); addPackToDeck('Circle Time 3')	Ms. Autumn		ms_autumn.jpg	1	
+circle3	You read: "Charlotte tells Wilbur his actions will shape his d- de-"	destiny	ad('e', 15)	density	ad('e', -25); ad('m', -35)	Max		max2.jpg	1	
+circle4	Class, it's time for Circle Time!	Sit next to Soren	ad('p', 15); ad('m', -25); addToTopDeck('circle5')	Sit next to Scout	ad('p', -15); ad('m', 20); addToTopDeck('circle5')	Ms. Autumn		ms_autumn.jpg	1	Circle Time 2
+circle5	Today we will be doing Show-and-Tell. Max, what would you like to do?	Tell a story about Scout's dog, Bear	ad('p', 20); addPackToDeck('Home 2')	Show a cool rock Brixlee gave you	ad('m', 30); addPackToDeck('Home 2')	Ms. Autumn		ms_autumn.jpg	1	
+circle6	Class, it's time for Circle Time!	Yay!	addToTopDeck('circle7')	Yay!	addToTopDeck('circle7')	Ms. Autumn		ms_autumn.jpg	1	Circle Time 3
+circle7	Who would like to read The Giving Tree to the class?	Me, Ms. Autumn!	ad('e', 25); ad('p', -20); addPackToDeck('Diorama')	. . .	ad('p', -15); ad('e', -15); addPackToDeck('Diorama')	Ms. Autumn		ms_autumn.jpg	1	
+learning1	Class, today we will learn about America!	Yay!	addToTopDeck('learning2')	Yay!	addToTopDeck('learning2')	Ms. Autumn		ms_autumn.jpg	1	Learning
+learning2	A' stands for Abraham Lincoln. 'B' stands for baseball. 'C' stands for...	Civil rights!	ad('e', 25)	Corruption!	ad('m', 20); ad('e', -30)	Ms. Autumn		ms_autumn.jpg	1	
+learning3	Class, today we will be making fridge magnets!	Magnets spelling 'MAX'	ad('e', -20)	Dinosaur magnets	ad('p', -25)	Ms. Autumn		ms_autumn2.jpg	1	Learning
+learning4	Class, today we will be learning math!	Yay!	addToTopDeck('learning5')	Yay!	addToTopDeck('learning5')	Ms. Autumn		ms_autumn2.jpg	1	Learning
+learning5	A 300 ft. train is traveling 300 ft. per minute through a 300 ft. long tunnel.  How long will it take the train to travel through the tunnel?	1 minute	ad('e', -40)	2 minutes	ad('e', 30)	Ms. Autumn		train.svg	1	
+learning6	Class, today we will be doing a riddle!	Yay!	addToTopDeck('learning7')	Yay!	addToTopDeck('learning7')	Ms. Autumn		ms_autumn.jpg	1	Learning
+learning7	Which way is the bus facing?	Right	ad('e', -40)	Left	ad('e', 30)	Ms. Autumn		bus.svg	1	
+learning8	Class, today we will have a spelling bee!	Yay!	addToTopDeck('learning9')	Yay!	addToTopDeck('learning9')	Ms. Autumn		ms_autumn.jpg	1	Learning
+learning9	Okay, Max! How do you spell...	seperate	ad('e', -40)	separate	ad('e', 20); addToTopDeck('learning10')	Ms. Autumn		ms_autumn.jpg	1	
+learning10	Great job, Max! How do you spell...	surprise	ad('e', 20)	suprise	ad('e', -40)	Ms. Autumn		ms_autumn.jpg	1	
+diorama1	Max, looks like we will be working on this group project together. I am so excited to work on this diorama with you!	Me too!	addToTopDeck('diorama2')	I would rather work with Scout	ad('m', -20); addToTopDeck('diorama2')	Brixlee		brixlee2.jpg	1	Diorama
+diorama2	Ms. Autumn said it should be about a book we read in class. Did you have any thoughts?	Charlotte's Web	ad('e', -20); ad('p', 20);	The Giving Tree	ad('e', 20); ad('p', -20);	Brixlee		brixlee3.jpg	1	
+playtime1	Max, can I have a turn on the swing please?	Sorry Brixlee, I just got on and Scout is after me.	ad('p', -20); ad('m', 20);	Sure, Brixlee!	ad('m', -25);	Brixlee		brixlee.jpg	1	Playtime
+playtime9	Let's play soccer! Who else wants to be a team captain?	Me!	ad('p', 20); addToTopDeck('playtime2')	. . .	ad('p', -20); addToTopDeck('playtime3')	Soren		soren.jpg	1	Playtime
+playtime2	Okay, let's start picking teams. You go first, Max. Who do you pick?	Scout	ad('m', 20); addToTopDeck('playtime3')	Brixlee	ad('m', -20); ad('p', -20); addToTopDeck('playtime4')	Soren		soren.jpg	1	
+playtime3	Max, can you switch positions with me? Playing goalie is boring!	In a little bit	ad('p', -25);	Sure	ad('p', 20);	Scout		scout3.jpg	1	
+playtime4	Max, you can you switch positions with me please? Playing goalie is boring.	In a little bit, sorry Brixlee	ad('p', -20);	Sure, Brixlee!	ad('p', 25);	Brixlee		brixlee2.jpg	1	
+playtime5	Max, do you want to play hide-and-seek with us?	Not today	ad('p', -30);	Sure!	ad('p', 15); addToTopDeck('playtime6')	Scout		scout2.jpg	1	Playtime
+playtime6	Do you want to hide or seek?	Hide	addToTopDeck('playtime7')	Seek	addToTopDeck('playtime8')	Scout		scout3.jpg	1	
+playtime7	I hide...	in the parking lot	ad('m', -30); ad('e', 20);	behind a large tree	ad('m', 20);	Max		max2.jpg	1	
+playtime8	What? You already found me? Max, we just started! Could you let me go hide again?	Too bad	ad('p', -30); ad('m', 30);	Go ahead	ad('p', 30); ad('m', -20);	Scout		scout.jpg	1	
+halloween1	Sweetie, what do you want to dress as for Halloween?	Abraham Lincoln	ad('p', -20); ad('e', 25); addToTopDeck('halloween2')	Mummy	ad('p', 20); addToTopDeck('halloween2')	Mom		mom.jpg	1	Halloween
+halloween2	Trick-or-treating is great! This candy bowl has a sign that says "Take one", but I'm going to take a whole bunch!	Let's respect our neighbors, Scout!	ad('m', 35); addToTopDeck('halloween3')	Me too!	ad('m', -35); addToTopDeck('halloween3')	Scout		scout2.jpg	1	
+halloween3	Hi Max and Scout! Can I join you guys for Trick-or-Treating?	Sorry, we were just finished Brixlee	ad('m', 20); ad('p', -25);	Sure, Brixlee!	ad('p', 25);	Brixlee		brixlee3.jpg	1	
+home1	Sweetie, I have a business meeting. The next-door neighbor Thor will walk you to school today, okay?	Not happening	ad('m', -20); addPackToDeck('Home 3'); addToTopDeck('home2')	Fine	ad('m', 25); addPackToDeck('Home 3'); addToTopDeck('home3')	Mom		mom2.jpg	1	Home
+home2	Sweetie, I promise it's just for today.	No. I said no.	ad('m', -35);	Ugh. Fine.	ad('m', 30); addToTopDeck('home3')	Mom		mom2.jpg	1	
+home3	Hey kid, it's been a while. How've you been?	Bad.	ad('m', -20);	Good.	ad('m', 20);	Thor		thor.jpg	1	
+home4	Max, can you come over to my house right now? Bear is about to have babies!	I can't. I'm grounded	ad('p', -25); ad('m', 30);	Sneak out of the house	ad('m', -30); ad('p', 30);	Scout		scout3.jpg	1	Home 2
+home5	Max, could you walk Bear after class today? I have a doctor's appointment.	I'm busy today	ad('p', -25);	I'd love to!	ad('p', 20); addToTopDeck('home6')	Scout		scout.jpg	1	Home 2
+home6	Bear, go fetch!	Feed Bear chocolate	ad('e', -20); ad('m', -25);	Feed Bear tuna	ad('m', 20);	Bear		bear.jpg	1	
+home7	Sweetie, could go ask Thor's family if they have a screwdriver we can borrow?	Not happening	ad('m', -30);	Okay	ad('m', 20); addToTopDeck('home8');	Mom		mom3.jpg	1	Home 3
+home8	Hey kid, here's a screwdriver. Tell your mom I said hi.	This is not a screwdriver, bozo	ad('e', 25); ad('m', -20);	Thanks Thor!	ad('e', -20);	Thor		thor.jpg	1	
+home9	Oh sweetie, you have a fever. I'll call the school and let them know you won't be going today.	But mom, today's the field trip	ad('m', -20);	Ugh. Whatever.	ad('m', 25);	Mom		mom.jpg	1	Home
+bullies	Hey poophead, did you remember to wear your diaper this morning?	Ignore	ad('m', 30);	Respond	ad('m', -25); ad('p', 25);	Second Graders		second_graders.jpg	1	Playtime
 
 </pre>
 
